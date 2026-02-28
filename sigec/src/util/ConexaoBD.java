@@ -1,7 +1,6 @@
 
 package util;
 
-import com.mysql.cj.xdevapi.PreparableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -9,7 +8,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class ConexaoBD {
-    private static final String URL = "jdb:mysql://localhost:3306/sigec";
+    private static final String URL = "jdbc:mysql://localhost:3306/sigec";
     private static final String USUARIO = "root";
     private static final String SENHA = "12345678";
     
@@ -24,7 +23,7 @@ public class ConexaoBD {
                 Class.forName("com.mysql.cj.jdbc.Driver");
                 
                 conexao = DriverManager.getConnection(URL, USUARIO, SENHA);
-                System.err.println("Conexão com o bando de dados estabelecida com sucesso!");
+                System.err.println("Conexao com o bando de dados estabelecida com sucesso!");
             }catch(SQLException e){
                 System.out.println("Erro ao conectar com o Banco de Dados!" + e.getMessage());
             }catch(ClassNotFoundException ex){
