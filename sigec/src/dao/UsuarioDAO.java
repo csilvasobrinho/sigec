@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import model.Usuario;
 import util.ConexaoBD;
 
@@ -29,6 +30,19 @@ public class UsuarioDAO {
         }finally{
             ConexaoBD.fecharConexao(conexao, pstmt);
         }
+    }
+    public static ArrayList<Usuario> listaUsuarioDAO(){
+        Connection conexao = ConexaoBD.conectar();
+        PreparedStatement pstmt = null;
+        ArrayList<Usuario> usuarios = new ArrayList<>();
+        
+        try {
+            String sql = "SELECT * FROM usuarios";
+            pstmt = conexao.prepareStatement(sql);
+            ResultSet rs = null;
+        } catch (Exception e) {
+        }
+        
     }
     
 }
