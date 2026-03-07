@@ -15,7 +15,7 @@ public class UsuarioDAO {
         Connection conexao = ConexaoBD.conectar();
         PreparedStatement pstmt = null;
         try {
-            String sql = "INSERT INTO usuario(nome_completo, login, senha, codigo_Perfil_de_Acesso) VALUES (?, ?, ?, ?)";
+            String sql = "INSERT INTO usuario(nome, login, senha, Perfil_Acesso) VALUES (?, ?, ?, ?)";
             pstmt = conexao.prepareStatement(sql);
             pstmt.setString(1, usuario.getNome());
             pstmt.setString(2, usuario.getLogin());
@@ -35,7 +35,7 @@ public class UsuarioDAO {
         Connection conexao = ConexaoBD.conectar();
         PreparedStatement pstmt = null;
         try {
-            String sql = "INSERT INTO usuario(nome_completo, login, senha, codigo_Perfil_de_Acesso) VALUES (?, ?, ?, ?)";
+            String sql = "INSERT INTO usuario(nome, login, senha, Perfil_Acesso) VALUES (?, ?, ?, ?)";
             pstmt = conexao.prepareStatement(sql);
             pstmt.setString(1, usuario.getNome());
             pstmt.setString(2, usuario.getLogin());
@@ -55,7 +55,7 @@ public class UsuarioDAO {
         Connection conexao = ConexaoBD.conectar();
         PreparedStatement pstmt = null;
         try {
-            String sql = "INSERT INTO usuario(nome_completo, login, senha, codigo_Perfil_de_Acesso) VALUES (?, ?, ?, ?)";
+            String sql = "INSERT INTO usuario(nome, login, senha, Perfil_Acesso) VALUES (?, ?, ?, ?)";
             pstmt = conexao.prepareStatement(sql);
             pstmt.setString(1, usuario.getNome());
             pstmt.setString(2, usuario.getLogin());
@@ -81,7 +81,7 @@ public class UsuarioDAO {
             pstmt = conexao.prepareStatement(sql);
             ResultSet rs = null;
         } catch (Exception e) {
-            return false;
+            return usuarios;
         }
     }
 }

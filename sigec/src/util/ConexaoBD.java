@@ -8,8 +8,13 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class ConexaoBD {
+    /*
     private static final String URL = "jdbc:mysql://localhost:3306/sigec";
     private static final String USUARIO = "root";
+    private static final String SENHA = "12345678";
+    */
+    private static final String URL = "jdbc:postgresql://localhost:5432/sigecsb";
+    private static final String USUARIO = "postgres";
     private static final String SENHA = "12345678";
     
     Connection conexao = null;
@@ -20,8 +25,10 @@ public class ConexaoBD {
             Connection conexao = null;
             
             try{
+                /*
                 Class.forName("com.mysql.cj.jdbc.Driver");
-                
+                */
+                Class.forName("org.postgresql.Driver");
                 conexao = DriverManager.getConnection(URL, USUARIO, SENHA);
                 System.err.println("Conexao com o bando de dados estabelecida com sucesso!");
             }catch(SQLException e){
